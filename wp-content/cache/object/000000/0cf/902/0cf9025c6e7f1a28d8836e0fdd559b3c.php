@@ -1,0 +1,1 @@
+èÞR<?php exit; ?>a:1:{s:7:"content";a:9:{s:23:"wp_smushit_smushit_auto";b:1;s:26:"wp_smushit_smushit_timeout";b:1;s:35:"wp_smushit_smushit_enforce_same_url";b:1;s:24:"wp_smushit_smushit_debug";b:1;s:19:"wpseo_internallinks";b:1;s:12:"widget_pages";b:1;s:15:"widget_calendar";b:1;s:16:"widget_tag_cloud";b:1;s:15:"widget_nav_menu";b:1;}}

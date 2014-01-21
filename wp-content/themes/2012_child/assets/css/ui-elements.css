@@ -1,0 +1,150 @@
+/*------------------------------------------------------------------
+Project:	Mist
+Version:	1.0
+Created: 		27/11/2013
+Last change:	16/12/2013
+-------------------------------------------------------------------*/
+
+/* =====  Links ===== */
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/*===== Titles =====*/
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Buttons ===== */
+
+.btn {
+	border-radius: 3px;
+}
+.btn-xxl {
+	padding: 14px 28px;
+}
+
+/* ====== Helper Classes ===== */
+
+.logo:after {
+	content: ".";
+}
+.text-muted {
+	color: #95a5a6;
+}
+.text-silver {
+	color: #ecf0f1;
+}
+.text-white {
+	color: #FFF;
+}
+hr.double-margin {
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+.heading {
+	margin-top: 60px;
+}
+.lh {
+	line-height: 22px;
+}
+.absolute {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.pull-right-xs {
+	float: right;
+}
+@media (max-width: 767px) {
+	.pull-right-xs {
+		float: left;
+	}
+}
+.text-right-xs {
+	text-align: right;
+}
+@media (max-width: 767px) {
+	.text-right-xs {
+		text-align: left;
+	}
+}
+.text-center-xs {
+	text-align: left;
+}
+@media (max-width: 767px) {
+	.text-center-xs {
+		text-align: center;
+	}
+}
+.transparent {
+	opacity: 0;
+}
+/* ===== Animations ===== */
+
+@media (max-width: 767px) {
+	.animated {
+	  -webkit-animation: none !important;
+	  -moz-animation: none !important;		
+	}
+}
+.delay1 {
+	-webkit-animation-delay: 0.25s;
+	-moz-animation-delay: 0.25s;
+}
+.delay2 {
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+}
+.delay3 {
+	-webkit-animation-delay: 0.75s;
+	-moz-animation-delay: 0.75s;
+}
+.delay4 {
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+}
+.delay5 {
+	-webkit-animation-delay: 1.25s;
+	-moz-animation-delay: 1.25s;
+}
+.delay6 {
+	-webkit-animation-delay: 1.5s;
+	-moz-animation-delay: 1.5s;
+}
+.delay7 {
+	-webkit-animation-delay: 1.75s;
+	-moz-animation-delay: 1.75s;
+}
+.delay8 {
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+}
+.delay9 {
+	-webkit-animation-delay: 2.25s;
+	-moz-animation-delay: 2.25s;
+}
+.delay10 {
+	-webkit-animation-delay: 2.5s;
+	-moz-animation-delay: 2.5s;
+}
+.note {
+	-webkit-animation-delay: 5s;
+	-moz-animation-delay: 5s;
+}
+
+/* ===== Scroll to Top ===== */
+
+.backtotop {
+	background: #7f8c8d;
+	padding: 10px 15px;
+	font-size: 18px;
+	color: #FFF;
+	border-radius: 3px;
+}
+.backtotop:hover {
+	background: #95a5a6;
+}

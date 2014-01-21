@@ -1,30 +1,4 @@
 <?php
-/*
-Plugin Name: Who's Online
-Plugin URI: http://wordpress.org/extend/plugins/wp-whos-online/
-Description: Sidebar widget to log when a user was last online
-Version: 0.6
-Author: Adam Backstrom
-Author URI: http://sixohthree.com/
-License: GPL2
-*/
-
-/*  Copyright 2011  Adam Backstrom <adam@sixohthree.com>
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
 function wpwhosonline_enqueue() {
 	add_action( 'wp_head', 'wpwhosonline_pageoptions_js', 20 );
 
@@ -95,14 +69,12 @@ function wpwhosonline_ajax_update() {
 function wpwhosonline_pageoptions_js() {
 	global $page_options;
 ?><script type='text/javascript'>
-// <![CDATA[
 var wpwhosonline = {
 	'ajaxUrl': "<?php echo esc_js( admin_url('admin-ajax.php') ); ?>",
 	'wpwhosonlineLoadTime': "<?php echo gmdate( 'Y-m-d H:i:s' ); ?>",
 	'getwpwhosonlineUpdate': '0',
 	'isFirstFrontPage': "<?php echo is_home(); ?>"
 };
-// ]]>
 </script><?php
 }
 
@@ -151,8 +123,6 @@ function wpwhosonline_list_authors() {
 			$html .= $item;
 		}
 	}
-	/* USER points SQL start */
-	/* USER points SQL end */
 	echo $html.'</div></li>';
 }
 
@@ -165,10 +135,9 @@ function wpwhosonline_list_authors() {
 function wpwhosonline_user( $last_online_ts, $user ) {
 	$sql = mysql_query("SELECT * FROM tumblr_account WHERE user_id = ".$user->ID."");
 	$row = mysql_fetch_array($sql);	
-	/* $avatar = get_avatar( $user->user_email, 32 ); */
 	$name = $user->display_name;
 	$avatar = '<img src="'.$row['tumblr_avatar'].'" title="'.$name.'" alt="'.$name.'" width="100" />'. $user->display_name;
-	// $link = '<a href="' . get_author_posts_url( $user->ID, $user->user_nicename ) . '" title="' . esc_attr( sprintf(__("Posts by %s"), $user->display_name) ) . '">' . $name . '</a>';
+
 	$link =  $name ;
 
 	$link = apply_filters( 'wpwhosonline_author_link', $link, $user );
@@ -192,9 +161,7 @@ function wpwhosonline_user( $last_online_ts, $user ) {
 	}
 	$current_user = wp_get_current_user();
 	$sql = mysql_query("SELECT * FROM tumblr_account WHERE user_id = ".$user->ID."");
-	$row = mysql_fetch_array($sql);		
-	/* return $avatar . $link . '<br>' . $last_online; */
-	/* return '<div class="image"><a href="http://www.tumblr.com/follow/' . $link . '" title="' . esc_attr( sprintf(__("Posts by %s"), $user->display_name) ) . '">'.$avatar .'</a>'. $link . '<br>' . $last_online .'<br />'. $row['points'].' points'; */
+	$row = mysql_fetch_array($sql);	
 	$token = substr(md5($user->ID),0, 10).'a'.substr(md5($link),0, 9).'f'.substr(md5($link),10, 10);	
 	return '<div class="image"><a target="_blank" href="'.get_bloginfo('home').'/tumblr/tumblrlink.php?follow='. $link .'&id=' . $current_user->ID . '&token='.$token.'" title="'.$user->display_name. '" class="username">'.$avatar .'</a><br /><span>'. number_format($row['points'], 0, '', ',').' points</span>';
 }

@@ -66,7 +66,7 @@ if($_GET['log'] == 0 and $current_user->ID > 0) {
 				if ( 0 == $current_user->ID ) {
 				?>
 				<a href="tumblr/login_with_tumblr.php"><div class="button">Click to Start</div></a>
-				<div class="terms">You agree to the Terms of Service</div>
+				<div class="terms">You agree to the <a href="/terms-of-service" title="Terms of Service">Terms of Service</a></div>
 				<?php
 				} else {
 				?>

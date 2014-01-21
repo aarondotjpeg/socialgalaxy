@@ -1,4 +1,6 @@
 <?php
+define('COOKIE_DOMAIN', 'social-galaxy.com'); // Added by W3 Total Cache
+
 /**
  * The base configurations of the WordPress.
  *
@@ -16,16 +18,18 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'socialdatabase');
+define('WP_CACHE', true); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', '/var/www/clients/client2/web1/web/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+define('DB_NAME', 'c2socialgalaxy');
 
 /** MySQL database username */
-define('DB_USER', 'socialdatabase');
+define('DB_USER', 'c2socialgalaxy');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'Social5pace!');
+define('DB_PASSWORD', 'WaffleKingd0m');
 
 /** MySQL hostname */
-define('DB_HOST', 'socialdatabase.db.10777601.hostedresource.com');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -80,6 +84,8 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
+define('MY_HOME','http://social-galaxy.com');
+define('BLOG_NAME','Social Galaxy');
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
